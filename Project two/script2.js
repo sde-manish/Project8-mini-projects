@@ -17,7 +17,7 @@ form.addEventListener('submit', function (e) {
     result.innerHTML = `Please give a valid weight`;
   } else {
     // Calculate the result if both height and weight are valid
-    const bmi = (weight / Math.pow(height / 100, 2)).toFixed(2);
+    const bmi = (weight/((height*height)/10000)).toFixed(2);
     result.innerHTML = `Your BMI is: ${bmi}`;
   }
 });

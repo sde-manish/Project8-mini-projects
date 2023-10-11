@@ -14,7 +14,13 @@ buttons.forEach( function(button){
         }else if (e.target.className === 'blue') {
             body.style.backgroundColor = e.target.className
         }else if (e.target.className === 'yellow') {
-            body.style.backgroundColor = e.target.className
+            body.style.backgroundColor = 'green'
+        }else if (e.target.className === 'default-color') {
+            body.style.backgroundColor = 'rgb(3, 133, 133)'
         }
     })
 })
+// const defaultColorText = document.querySelector(".default-color");
+// if (body.backgroundColor == rgb(3, 133, 133)) {
+//     defaultColorText.innerHTML = ''
+// }

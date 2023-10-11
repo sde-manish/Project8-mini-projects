@@ -11,10 +11,12 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 40px;
     border: solid;
     border-radius: 5px;
     margin: 10px 0;
+}
+.home-text{
+    font-size: 25px;
 }
 a{
     text-decoration: none;
@@ -66,4 +68,22 @@ h1{
     width: 100px;
     border: solid;
     margin: 5px;
+}
+.default{
+    display: flex;
+    /* background-color: aqua; */
+    justify-content: center;
+    align-items:flex-end
+}
+.default p{
+    padding: 10px;
+    border-radius: 7px;
+    /* background-color: brown; */
+    color: rgb(3, 133, 133);
+    font-size:larger;
+    font-weight: bolder;
+    cursor:default;
+}
+.default p:hover{
+    background-color: black;
 }

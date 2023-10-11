@@ -73,17 +73,20 @@ h1{
     display: flex;
     /* background-color: aqua; */
     justify-content: center;
-    align-items:flex-end
+    align-items:center;
 }
 .default p{
     padding: 10px;
     border-radius: 7px;
-    /* background-color: brown; */
+    background-color: black;
     color: rgb(3, 133, 133);
     font-size:larger;
     font-weight: bolder;
     cursor:default;
 }
-.default p:hover{
+/* .default p:hover{
     background-color: black;
+} */
+.default{
+    display:none;
 }

@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color:rgb(3, 133, 133);
+    margin: 20px;
+
+}
+.home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    border: solid;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+.projects{
+    display: grid;
+}
+a{
+    text-decoration: none;
+    font-size: 20px;
+    padding: 20px;
+    margin: 5px 0;
+    color: black;
+    border-radius: 5px;
+    /* background-color: cornflowerblue; */
+}
+a:hover{
+    background-color:rgb(1, 99, 78);
+    color: white;
+}

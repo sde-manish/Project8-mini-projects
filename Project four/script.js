@@ -1,5 +1,4 @@
 let randomNumber = Math.floor(((Math.random())*30+1));
-    console.log(randomNumber);
 
 const userInput = document.getElementById('guess-number');
 const remainingAttempts = document.getElementById('attempts');
@@ -43,7 +42,12 @@ function checkGuess(guessedNumber){
     } else if (guessedNumber < randomNumber) {
         message.innerHTML = 'Your guessed number is Too Low';
     } else if (guessedNumber == randomNumber) {
-        message.innerHTML = `Wow! You guessed it. The Random Number is : ${randomNumber}`
+        message.innerHTML = `Wow! 🎆🎉✨ You guessed it. The Random Number is : ${randomNumber}`;
+        message.style.backgroundColor = 'green';
+        userInput.setAttribute('disabled','');
+        Submitbtn.style.display = 'none';
+        newgame.style.display = 'block';
+        newGame();
     }
     
     attemptsCounter--;
@@ -88,31 +92,3 @@ function newGame(){
     })    
 
 }
-
-// Submitbtn.addEventListener('click', function(e){
-//     e.preventDefault();
-
-
-//     
-//     
-//     
-
-//      {
-//         
-//         
-//         
-//         if (attemptsCounter === 0) {
-//             
-//             // attemptsCounter.in
-//         }
-//     }
-// })
-
-
-
-
-
-// newgame.addEventListener('click', function(e){
-//     
-//     console.log(randomNumber);
-// })

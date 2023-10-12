@@ -1,51 +1,118 @@
-const randomNumber = Math.floor(((Math.random())*30+1));
+let randomNumber = Math.floor(((Math.random())*30+1));
     console.log(randomNumber);
+
+const userInput = document.getElementById('guess-number');
 const remainingAttempts = document.getElementById('attempts');
 const previusGuessText = document.getElementById('previus-guess');
-const submit =document.getElementById('submit');
-let attemptsCounter = 10;
-const previusGuesses = [];
-
-// const form = document.getElementById('form');
-
-form.addEventListener('submit', function(e){
-    e.preventDefault();
-    // console.log('selected');
-
-    const guessedNumber = document.getElementById('guess-number').value;
-    const message = document.getElementById('validation-message');
-    document.getElementById('guess-number').value = ''
-
-    if (guessedNumber > 100 || guessedNumber < 1) {
-        message.innerHTML = 'Enter a number between 1 and 30';
-    } else {
-        if (guessedNumber > randomNumber) {
-            message.innerHTML = 'Your guessed number is Too High'
-        } else if (guessedNumber < randomNumber) {
-            message.innerHTML = 'Your guessed number is Too Low';
-        } else if (guessedNumber == randomNumber) {
-            message.innerHTML = `Wow! You guessed it. The Random Number is : ${randomNumber}`
-        }
-        attemptsCounter--;
-        remainingAttempts.innerHTML = attemptsCounter;
-        previusGuesses.push(guessedNumber);
-        previusGuessText.innerHTML = previusGuesses;
-        if (attemptsCounter === 0) {
-            submit.style.display = 'none';
-            newgame.style.display = 'block';
-            message.innerHTML = `Your attempts are over`;
-            // submit.innerHTML = `<h2 id='newgame'>Start New Game</h2>`
-        }
-    }
-
-})
-
+const Submitbtn = document.getElementById('submitbtn');
 const newgame = document.getElementById('newgame');
-newgame.addEventListener('click', function(e){
-    randomNumber = Math.floor(((Math.random())*30+1));
-    console.log(randomNumber);
-})
+const message = document.getElementById('validation-message');
+let attemptsCounter = 10;
+let previusGuesses = [];
 
-function sta (){
+
+let play = true;
+
+
+
+if (play) {
+    Submitbtn.addEventListener('click', function(e){
+        e.preventDefault();
+        console.log("Clicked");
+
+        const guessedNumber = userInput.value;
+        validate(guessedNumber);
+
+
+    })    
+}
+
+function validate(guessedNumber){
+        if (guessedNumber > 30 || guessedNumber < 1) {
+                message.innerHTML = 'Enter a number between 1 and 30';
+                document.getElementById('guess-number').value = ''
+        } else {
+            checkGuess(guessedNumber);
+        }
 
 }
+
+function checkGuess(guessedNumber){
+    if (guessedNumber > randomNumber) {
+        message.innerHTML = 'Your guessed number is Too High'
+    } else if (guessedNumber < randomNumber) {
+        message.innerHTML = 'Your guessed number is Too Low';
+    } else if (guessedNumber == randomNumber) {
+        message.innerHTML = `Wow! You guessed it. The Random Number is : ${randomNumber}`
+    }
+    
+    attemptsCounter--;
+    remainingAttempts.innerHTML = attemptsCounter;
+    previusGuesses.push(guessedNumber);
+    previusGuessText.innerHTML = previusGuesses;
+    document.getElementById('guess-number').value = ''
+    if (attemptsCounter == 0) {
+        endGame();
+        newGame();
+    }
+
+}
+function endGame(){
+    document.getElementById('guess-number').value = '';
+    userInput.setAttribute('disabled','');
+    Submitbtn.style.display = 'none';
+    newgame.style.display = 'block';
+    message.innerHTML = `'Game Over!' Your attempts are over. The random number was ${randomNumber}`;
+    message.style.backgroundColor = 'red';
+    play = false;
+
+
+}
+
+function newGame(){
+    newgame.addEventListener('click', function(e){
+        e.preventDefault();
+        randomNumber = Math.floor(((Math.random())*30+1));
+
+        userInput.removeAttribute('disabled');
+        attemptsCounter = 10;
+        previusGuesses = [];
+        remainingAttempts.innerHTML = attemptsCounter;
+        previusGuessText.innerHTML = previusGuesses;
+        Submitbtn.style.display = 'block';
+        newgame.style.display = 'none';
+        message.innerHTML = '';
+        message.style.backgroundColor = 'none';
+
+        play = true;
+    })    
+
+}
+
+// Submitbtn.addEventListener('click', function(e){
+//     e.preventDefault();
+
+
+//     
+//     
+//     
+
+//      {
+//         
+//         
+//         
+//         if (attemptsCounter === 0) {
+//             
+//             // attemptsCounter.in
+//         }
+//     }
+// })
+
+
+
+
+
+// newgame.addEventListener('click', function(e){
+//     
+//     console.log(randomNumber);
+// })

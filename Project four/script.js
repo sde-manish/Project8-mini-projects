@@ -62,8 +62,8 @@ function endGame(){
     userInput.setAttribute('disabled','');
     Submitbtn.style.display = 'none';
     newgame.style.display = 'block';
-    message.innerHTML = `'Game Over!' Your attempts are over. The random number was ${randomNumber}`;
-    message.style.backgroundColor = 'red';
+    message.innerHTML = ` 'Game Over!' Your attempts are over. The random number was ${randomNumber} `;
+    message.style.backgroundColor = '#a80011';
     play = false;
 
 
@@ -82,7 +82,7 @@ function newGame(){
         Submitbtn.style.display = 'block';
         newgame.style.display = 'none';
         message.innerHTML = '';
-        message.style.backgroundColor = 'none';
+        message.style.backgroundColor = 'transparent';
 
         play = true;
     })    

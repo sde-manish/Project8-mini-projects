@@ -33,43 +33,56 @@ a:hover{
     background-color:rgb(1, 99, 78);
     color: white;
 }
-.formarea{
-    display:grid;
+.container{
+    margin-top: 20px;
+    display: grid;
     justify-content: center;
     align-items: center;
-    /* background-color: red; */
+}
+#form{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    background-color: ;
 }
 p{
-    margin: 10px 0;
-    font-size: 20px;
+    text-align: center;
+    margin: 5px;
+    font-size: 18px;
+    color: white;
+}
+h2{
+    margin: 10px;
 }
 input{
-    font-size: 20px;
-    padding:0 5px;
-    margin: 10px;
+    margin: 5px;
+    padding: 5px 10px;
     border-radius: 5px;
+    font-size: 22px;
+    /* width: 100px; */
 }
 button{
-    margin: 10px;
-    padding:2px 10px;
+    margin: 5px;
+    padding: 5px 10px;
     border-radius: 5px;
-    font-size: 30px;
-    float:right;
+    font-size: 18px;
     font-weight: bold;
-    background-color: thistle;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color:cornflowerblue;
 }
 button:active{
-    background-color: grey;
+    background-color: blue;
 }
-h3{
-    margin: 10px 0;
+#newgame{
+    display: none;
+    background-color: red;
+    
 }
-table{
-    border: solid;
-    border-radius: 5px;
-    border-spacing: 10px;
-    background-color: rgb(7, 94, 76);
-    justify-content: center;
-    align-content: center;
-    margin: 10px 0;
+h5{
+    margin: 5px;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+#validation-message{
+    text-align: center;
 }

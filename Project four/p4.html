@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Four</title>
+    <link rel="stylesheet" href="s4.css">
+</head>
+<body>
+    <div class="home">
+        <a class="home-text" href="/index.html">Home</a>
+    </div>
+    <h1>Number guessing Game:</h1>
+    <div class="container">
+        <div class="formarea">
+            <form id="form">
+                <p>Try and guess the random number between 1 and 30.</p>
+                <p>[You have 10 attempts to guess.]</p>
+                <h2>Guess the Number</h2>
+                <input type="number" id="guess-number" placeholder="Enter your guess ">
+                <button type="submit" id="submit">SUBMIT</button>
+                <button type="reset" id="newgame"> Start New Game</button>
+                <h5>Previus Guesses: <span id="previus-guess"></span></h5>
+                <h5>Remaining attempts: <span id="attempts">10</span></h5>
+                
+            </form>
+            <h1 id="validation-message"></h1>
+        </div>
+    </div>
+    
+</body>
+<script src="script.js"></script>
+</html>

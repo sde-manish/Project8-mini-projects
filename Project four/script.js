@@ -6,7 +6,7 @@ const previusGuessText = document.getElementById('previus-guess');
 const Submitbtn = document.getElementById('submitbtn');
 const newgame = document.getElementById('newgame');
 const message = document.getElementById('validation-message');
-let attemptsCounter = 10;
+let attemptsCounter = 5;
 let previusGuesses = [];
 
 
@@ -79,7 +79,7 @@ function newGame(){
         randomNumber = Math.floor(((Math.random())*30+1));
 
         userInput.removeAttribute('disabled');
-        attemptsCounter = 10;
+        attemptsCounter = 5;
         previusGuesses = [];
         remainingAttempts.innerHTML = attemptsCounter;
         previusGuessText.innerHTML = previusGuesses;

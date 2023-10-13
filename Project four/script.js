@@ -55,7 +55,7 @@ function checkGuess(guessedNumber){
     previusGuesses.push(guessedNumber);
     previusGuessText.innerHTML = previusGuesses;
     document.getElementById('guess-number').value = ''
-    if (attemptsCounter == 0) {
+    if (attemptsCounter == 0 && guessedNumber != randomNumber) {
         endGame();
         newGame();
     }

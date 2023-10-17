@@ -6,8 +6,10 @@ const previusGuessText = document.getElementById('previus-guess');
 const Submitbtn = document.getElementById('submitbtn');
 const newgame = document.getElementById('newgame');
 const message = document.getElementById('validation-message');
+const scoreText = document.getElementById('score-value');
 let attemptsCounter = 5;
 let previusGuesses = [];
+let score = 0;
 
 
 let play = true;
@@ -44,9 +46,12 @@ function checkGuess(guessedNumber){
     } else if (guessedNumber == randomNumber) {
         message.innerHTML = `Wow! 🎆🎉✨ You guessed it. The Random Number is : ${randomNumber}`;
         message.style.backgroundColor = 'green';
+        
         userInput.setAttribute('disabled','');
         Submitbtn.style.display = 'none';
         newgame.style.display = 'block';
+        score += 5;
+        scoreText.innerHTML = score;
         newGame();
     }
     
@@ -68,6 +73,8 @@ function endGame(){
     newgame.style.display = 'block';
     message.innerHTML = ` 'Game Over!' Your attempts are over. The random number was ${randomNumber} `;
     message.style.backgroundColor = '#a80011';
+    score -= 2;
+    scoreText.innerHTML = score;
     play = false;
 
 
